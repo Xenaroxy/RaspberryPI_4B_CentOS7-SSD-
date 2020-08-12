@@ -263,9 +263,10 @@ __NOTE__
 
 CentOS를 라즈베리4에 설치하기 희망하는 분들은 해당 글을 참고해서 고생을 덜 했으면 좋겠다고 생각해서 만들어진 리포지터리
 
+* * *
 >Version English
 
-#RaspberryPI 4B CentOS Setting with SSD
+# RaspberryPI 4B CentOS Setting with SSD
 ## CentOS7
 
 If you're in hurry, please check ★
