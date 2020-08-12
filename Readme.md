@@ -5,25 +5,19 @@
 ★순서 5 -> 1 -> 7   
 
 > 현 시점에서 CentOS 중 RaspberryPI를 지원하는 버전은 7버전이 유일하다.   
-> At this point, only version 7 of CentOS support Raspberry PI   
 > 2020-01-11을 기준으로 CentOS7 1810 버전만 작동이 되었으나   
-> Based on 2020-01-11, only the CentOS7 Version 1810 was operational,   
 > 2020-08-12 현 시점을 기준으로 CentOS7 2003 버전도 적용이 가능하다   
-> The version of CentOS7 2003 is also available at the current time of 2020-08-12.
 
 > CentOS7.8.2003 버전(CentOS 7.8.2003 Version)   
 [CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.8.2003/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz)
 
 Raspberry4의 경우엔 아쉽게도 CentOS GNOME 혹은 KDE버전은 사용할 수 없다.   
-(Unfortunately, in case of Raspberry4, it cannot use GNOME or KDE version.)   
 Minimal뒤에 4가 붙은 버전만 Raspberry4에서 사용이 가능하고 그 외에는 Raspberry3까지만 지원한다.   
-(Raspberry4 can only use the version which has number 4 behind Minimal, elses can use on Raspberry 2 or 3)   
 
 * * *
-## CentOS7 설치 (Installing CentOS7)
+## CentOS7 설치
 
 필자의 경우엔 2가지 방법을 사용해서 CentOS를 설치하였는데, Rufus와 Raspberry PI Imager를 이용해서 시도해보았다.   
-(I my case, I tried to install CentOS using two methods, Rufus and Raspberry Pi Imager)   
 
 > Link for Rufus   
 [Rufus](https://rufus.ie/)
@@ -33,7 +27,7 @@ Minimal뒤에 4가 붙은 버전만 Raspberry4에서 사용이 가능하고 그 
 
 * * *
 ## SSD로 부팅하기 위한 시도 과정
-### 1. 구글 참고 (Search Information from Google) ★
+### 1. 구글 참고 ★
 
 사실상 라즈베리 파이를 처음 사용해보기 때문에 SD카드로 부팅하는 방법은 알았어도 SSD로 부팅하는 방법은 몰랐다.   
 더하여 최신버전 라즈베리를 구매해버리는 바람에 소프트웨어도 불안정한 상태라는 이야기를 들어 더욱 방황했다.
@@ -268,3 +262,43 @@ __NOTE__
 > 모니터에 연결하여 사용하지 않아서 파악이 불가능했던 것으로 밝혀져...
 
 CentOS를 라즈베리4에 설치하기 희망하는 분들은 해당 글을 참고해서 고생을 덜 했으면 좋겠다고 생각해서 만들어진 리포지터리
+
+>Version English
+
+#RaspberryPI 4B CentOS Setting with SSD
+## CentOS7
+
+If you're in hurry, please check ★
+The order of ★is 5 -> 1 -> 7
+
+> At this point, only version 7 of CentOS support Raspberry PI   
+> Based on 2020-01-11, only the CentOS7 Version 1810 was operational,   
+> The version of CentOS7 2003 is also available at the current time of 2020-08-12.
+
+> CentOS7.8.2003 버전(CentOS 7.8.2003 Version)   
+[CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.8.2003/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz)
+
+Unfortunately, in case of Raspberry4, it cannot use GNOME or KDE version.   
+Raspberry4 can only use the version which has number 4 behind Minimal, elses can use on Raspberry 2 or 3   
+
+* * *
+## Installing CentOS7
+
+I my case, I tried to install CentOS using two methods, Rufus and Raspberry Pi Imager   
+
+> Link for Rufus   
+[Rufus](https://rufus.ie/)
+
+> Link for Raspberry PI Imager   
+[Raspberry PI Imager](https://www.raspberrypi.org/downloads/)
+
+* * *
+## Attempting to boot from SSD
+### Search Information from Google ★
+
+In fact, it was my first time using a raspberry pi, so I knew how to boot with an SD card, but I didn't know how to boot with an SSD.   
+In addition, what I bought was the latest version of Raspberry made me even more lost when I heard that the software was unstable.   
+
+This is the data I found while wandering.   
+[Official Raspberry Pi 4 USB Boot from SSD (beta)](https://peyanski.com/official-raspberry-pi-4-usb-boot/)   
+
