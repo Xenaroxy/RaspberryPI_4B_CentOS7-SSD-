@@ -1,4 +1,5 @@
-#RaspberryPI 4B CentOS Setting with SSD
+# RaspberryPI 4B CentOS Setting with SSD
+
 ## CentOS7
 
 급한 분들은 ★을 찾아서 보시면 됩니다.   
