@@ -3,6 +3,8 @@
 
 급한 분들은 ★을 찾아서 보시면 됩니다.   
 ★순서 5 -> 1 -> 7   
+핵심은 라즈비안으로 rpi-eeprom 등을 실행하고, elf파일과 dat파일만 CentOS로 복사하는 겁니다.   
+따라서 SD는 라즈비안, SSD는 CentOS로 하시면 간단!
 
 > 현 시점에서 CentOS 중 RaspberryPI를 지원하는 버전은 7버전이 유일하다.   
 > 2020-01-11을 기준으로 CentOS7 1810 버전만 작동이 되었으나   
@@ -271,12 +273,14 @@ CentOS를 라즈베리4에 설치하기 희망하는 분들은 해당 글을 참
 
 If you're in hurry, please check ★
 The order of ★is 5 -> 1 -> 7
+The main point is just execute rpi-eeprom update in your Rasbian, and copy elf and dat file to CentOS.   
+So what you really need is Rasbian SDcard and CentOS SSD.
 
 > At this point, only version 7 of CentOS support Raspberry PI   
 > Based on 2020-01-11, only the CentOS7 Version 1810 was operational,   
 > The version of CentOS7 2003 is also available at the current time of 2020-08-12.
 
-> CentOS7.8.2003 버전(CentOS 7.8.2003 Version)   
+> CentOS7.8.2003 Version
 [CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.8.2003/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz)
 
 Unfortunately, in case of Raspberry4, it cannot use GNOME or KDE version.   
@@ -303,3 +307,105 @@ In addition, what I bought was the latest version of Raspberry made me even more
 This is the data I found while wandering.   
 [Official Raspberry Pi 4 USB Boot from SSD (beta)](https://peyanski.com/official-raspberry-pi-4-usb-boot/)   
 
+When you enter this site, you can see very detail explanation how to boot Raspberry PI with your SSD.   
+However, unfortunately, it's limited on Rasbian.
+
+Commands
+
+```linux
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo rpi-update
+sudo reboot
+```
+
+First of all, update all of your package and then reboot the system.   
+After rebooting your system, login to ssh to execute this commands
+
+> To install rpi-eeprom we will use this command.   
+> In some cases, system may already got this package, in this case, you can skip this step.   
+```linux
+sudo apt install rpi-eeprom -y
+```
+
+After finish installing, enter following commands
+```linux
+sudo sed -i 's/critical/beta/g' /etc/default/rpi-eeprom-update
+```
+
+In case of 2GB or 4GB Model, they have some errors on USB booting menu, so it doesn't have USB booting system.   
+As a result of this errors, we need to update our bootloader by using this command. 
+
+> sudo rpi-eeprom-update -d -f /lib/firmware/raspberrypi/bootloader/beta/pieeprom-yyyy-MM-dd.bin
+
+yyyy-MM-dd is for the release date of the firmware, the most recent package is 2020-07-31.
+Thus, the commands will seems like this.
+
+```linux
+sudo rpi-eeprom-update -d -f /lib/firmware/raspberrypi/bootloader/beta/pieeprom-2020-07-31.bin
+```
+
+After you execute this command, you will get the following results.
+
+> .bin   
+> BCM2711 detected    
+> Dedicated VL805 EEPROM detected   
+> BOOTFS /boot   
+> *** INSTALLING /lib/firmware/raspberrypi/bootloader/beta/pieeprom-2020-07-31.bin ***   
+> BOOTFS /boot   
+> EEPROM update pending. Please reboot to apply the update.   
+
+When you see this results, reboot your system.
+
+To check your bootloader, once more login ssh, and then execute this commands.
+
+```linux
+vcgencmd bootloader_version
+vcgencmd bootloader_config
+```
+
+When you execute these commands, you need to check at least two lines. 
+
+First of all, for the bootloader_version,    
+> July 31 2020 --:--:--   
+You nned to check the console returns this result.
+
+For the bootloader_config,   
+> BOOT_ORDER=0xf41   
+The last line of the result should be seems like this.
+
+__0xf41is 4 : USB Booting 1 : SDcard Booting so the system will be boot your RaspberryPi by following this order USB->SDcard
+
+Almost done,   
+when you finish following steps, you can boot your rasbian OS with SSD  after execute this commands.
+
+```linux
+sudo mkdir /mnt/mydisk
+sudo mount /dev/sda1 /mnt/mydisk
+sudo cp /boot/*.elf /mnt/mydisk
+sudo cp /boot/*.dat /mnt/mydisk
+```
+
+Now you can boot your Raspberry with SSD
+
+> When I follow this step, I really can boot my Raspberry with SSD.
+
+* * *
+### 2. Follow step 1 with CentOS
+
+> The result was ...
+
+When I start this step, I already saw that the rasbian works well, so as similar as rasbian,   
+I think I will get the same result when I use CentOS.
+~~Not a chance~~
+
+Because Centos doesn't have rpi-eeprom package, I can't go furthur aftert doing yum update.
+However, fortunately, the bootloader already setted BOOT_ORDER=0xf41,   
+So I just copy .elf files and .dat files!
+
+~~Not a chance, do it again~~
+
+> Let's skip this step.
+
+* * *
+Updating...
