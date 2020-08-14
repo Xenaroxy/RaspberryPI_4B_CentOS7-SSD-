@@ -396,7 +396,7 @@ Now you can boot your Raspberry with SSD
 > The result was ...
 
 When I start this step, I already saw that the rasbian works well, so as similar as rasbian,   
-I think I will get the same result when I use CentOS.
+I think I will get the same result when I use CentOS.   
 ~~Not a chance~~
 
 Because Centos doesn't have rpi-eeprom package, I can't go furthur aftert doing yum update.
