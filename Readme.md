@@ -280,7 +280,7 @@ So what you really need is Rasbian SDcard and CentOS SSD.
 > Based on 2020-01-11, only the CentOS7 Version 1810 was operational,   
 > The version of CentOS7 2003 is also available at the current time of 2020-08-12.
 
-> CentOS7.8.2003 Version
+> CentOS7.8.2003 Version   
 [CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.8.2003/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz)
 
 Unfortunately, in case of Raspberry4, it cannot use GNOME or KDE version.   
