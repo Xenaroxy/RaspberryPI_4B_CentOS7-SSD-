@@ -9,10 +9,11 @@
 
 > 현 시점에서 CentOS 중 RaspberryPI를 지원하는 버전은 7버전이 유일하다.   
 > 2020-01-11을 기준으로 CentOS7 1810 버전만 작동이 되었으나   
-> 2020-08-12 현 시점을 기준으로 CentOS7 2003 버전도 적용이 가능하다   
+> 2020-08-12 현 시점을 기준으로 CentOS7 2003 버전도 적용이 가능하다  
+> 2020-11-24 현 시점을 기준으로 CentOS7 2003 버전이 지원 종료되어 2009 
 
-> CentOS7.8.2003 버전(CentOS 7.8.2003 Version)   
-[CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.8.2003/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz)
+> CentOS7.9.2009 버전(CentOS 7.9.2009 Version)   
+[CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.9.2009/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz)
 
 Raspberry4의 경우엔 아쉽게도 CentOS GNOME 혹은 KDE버전은 사용할 수 없다.   
 Minimal뒤에 4가 붙은 버전만 Raspberry4에서 사용이 가능하고 그 외에는 Raspberry3까지만 지원한다.   
@@ -280,9 +281,10 @@ So what you really need is Rasbian SDcard and CentOS SSD.
 > At this point, only version 7 of CentOS support Raspberry PI   
 > Based on 2020-01-11, only the CentOS7 Version 1810 was operational,   
 > The version of CentOS7 2003 is also available at the current time of 2020-08-12.
+> The version of CentOS7 2003 is no longer available, so update link to CentOS7 2009 at the current time of 2020-11-24
 
-> CentOS7.8.2003 Version   
-[CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.8.2003/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz)
+> CentOS7.9.2009 Version   
+[CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.9.2009/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz)
 
 Unfortunately, in case of Raspberry4, it cannot use GNOME or KDE version.   
 Raspberry4 can only use the version which has number 4 behind Minimal, elses can use on Raspberry 2 or 3   
