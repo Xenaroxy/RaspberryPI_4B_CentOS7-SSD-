@@ -10,7 +10,7 @@
 > 현 시점에서 CentOS 중 RaspberryPI를 지원하는 버전은 7버전이 유일하다.   
 > 2020-01-11을 기준으로 CentOS7 1810 버전만 작동이 되었으나   
 > 2020-08-12 현 시점을 기준으로 CentOS7 2003 버전도 적용이 가능하다  
-> 2020-11-24 현 시점을 기준으로 CentOS7 2003 버전이 지원 종료되어 2009 
+> 2020-11-24 현 시점을 기준으로 CentOS7 2003 버전이 지원 종료되어 2009 버전으로 업데이트
 
 > CentOS7.9.2009 버전(CentOS 7.9.2009 Version)   
 [CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz](http://mirror.freethought-internet.co.uk/centos-altarch/7.9.2009/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2009-sda.raw.xz)
